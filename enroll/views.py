@@ -1,5 +1,5 @@
 from django.http.response import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.http import HttpResponse, JsonResponse
 from .forms import StudentRegistration
 from django.views.decorators.csrf import csrf_exempt
@@ -23,5 +23,6 @@ def saveData(request):
             usr = Curd(name=name, email=email, password=password)
             usr.save()
             return JsonResponse({'status':'Save'})
+            redirect('home')
         else:
             return JsonResponse({'status':'Fail'})
