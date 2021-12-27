@@ -13,7 +13,8 @@ $("#btnsave").click(function(){
         console.log(nm, em, pwd)
         mydata = {name:nm, email:em, password:pwd};
     $.ajax({
-        url: "{% url 'save' %}",
+        // url: "{% url 'save' %}",
+        url: "/save/",
         method: "POST",
         data: mydata,
         success: function(data){
