@@ -10,9 +10,7 @@ $("#btnsave").click(function(){
     }else if(pwd == ""){
         console.log("Please Enter Your password!")
     }else{
-        // console.log(nm);
-        // console.log(em);
-        // console.log(pwd);
+        console.log(nm, em, pwd)
         mydata = {name:nm, email:em, password:pwd};
     $.ajax({
         url: "{% url 'save' %}",
